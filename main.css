@@ -1,0 +1,64 @@
+body, html {
+  margin: 0;
+  font-family: Menlo, Consolas, monaco, monospace;
+  background-color: DimGray;
+}
+
+/* centers the album on large screens */
+#wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#album {
+  width: 100%;
+  height: 100%;
+  max-width: 50em;
+  box-shadow: 0px 10px 5px -5px #333;
+}
+
+.square {
+  font-size: 2em;
+  float: left;
+  display: inline-block;
+  width: calc(100% / 2);
+  box-sizing: border-box;
+  display: flex; /* centers label in square */
+  justify-content: center; /* centers label in square */
+  align-items: center; /* centers label in square */
+}
+.square:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  border: 3px solid black;
+}
+
+/* trick to make each square's height equal to it's width */
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/* media queries for responding to screen size */
+@media only screen and (min-width: 30em) {
+  .square {
+    width: calc(100% / 3);
+  }
+}
+@media only screen and (min-width: 35em) {
+  .square {
+    width: calc(100% / 4);
+  }
+}
+@media only screen and (min-width: 42em) {
+  .square {
+    width: calc(100% / 6);
+  }
+}
+@media only screen and (min-width: 50em) {
+  #album {
+    margin-top: 5em;
+  }
+}
